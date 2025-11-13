@@ -1,0 +1,22 @@
+[package]
+name = "metalgbm"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+metal = "0.32.0"
+ndarray = "0.17.1"
+num-traits = "0.2.19"
+objc = "0.2.7"
+pyo3 = { version = "0.27.1", features = ["extension-module", "abi3-py310"], optional = true }
+rayon = "1.11.0"
+
+[dev-dependencies]
+approx = "0.5.1"
+criterion = "0.7.0"
+
+[features]
+pyo3 = ["dep:pyo3"]
